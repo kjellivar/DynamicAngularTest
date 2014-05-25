@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic angular hell</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-additions.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="dynamicAngular">
+
+<div class="container" ng-controller="MyController">
+    <h1>Awesome</h1>
+    <!--<div dynamic-directive="selectedDirective"></div>-->
+    <!-- <select ng-model="selectedDirective" ng-options="option.type for option in options"></select> -->
+    <div ng-repeat="element in options">
+        <div dynamic-directive="element"></div>
+    </div>
+
+</div>
+
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-animate.min.js"></script>
+<script src="lib/angular-sanitize.min.js"></script>
+<script src="lib/angular-strap.js"></script>
+<script src="lib/angular-strap.tpl.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
