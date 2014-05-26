@@ -11,12 +11,14 @@
 <body ng-app="dynamicAngular">
 
 <div class="container" ng-controller="MyController">
-    <h1>Awesome</h1>
-    <!--<div dynamic-directive="selectedDirective"></div>-->
-    <!-- <select ng-model="selectedDirective" ng-options="option.type for option in options"></select> -->
-    <div ng-repeat="element in options">
+
+    <div ng-repeat="element in document">
         <div dynamic-directive="element"></div>
     </div>
+
+    <form class="form-inline">
+        <select ng-model="selectedDirective" class="form-control"ng-options="key as key for (key, val) in components"></select> <button class="btn btn-primary" ng-click="addComponent(selectedDirective)">Add</button>
+    </form>
 
 </div>
 

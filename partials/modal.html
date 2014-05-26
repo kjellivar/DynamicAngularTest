@@ -6,8 +6,13 @@
                 <h4 class="aside-title">Edit <span ng-bind="bsAside.type"></span></h4>
             </div>
             <div class="aside-body">
-                <input class="form-control" ng-model="bsAside.title">
-                <textarea class="form-control" rows="10" cols="50" ng-model="bsAside.content"></textarea>
+                <div ng-repeat="prop in bsAsideProperties" ng-class="{checkbox: prop.inputType === 'checkbox'}">
+                    <label><input type="{{prop.inputType}}" ng-model="bsAside[prop.key]" ng-if="prop.inputType === 'checkbox'"> {{prop.key}}</label>
+                    <input type="{{prop.inputType}}" class="form-control" ng-model="bsAside[prop.key]" ng-if="prop.inputType === 'text'">
+                    <textarea class="form-control" rows="10" cols="50" ng-model="bsAside[prop.key]" ng-if="prop.inputType === 'textarea'"></textarea>
+
+                </div>
+
             </div>
             <div class="aside-footer">
                 <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
