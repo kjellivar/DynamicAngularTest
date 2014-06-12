@@ -4,21 +4,42 @@
     <meta charset="UTF-8">
     <title>Dynamic angular hell</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,900,200,300,600,600italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-additions.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-app="dynamicAngular">
+<body ng-app="dynamicAngular" ng-controller="MyController">
 
-<div class="container" ng-controller="MyController">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar>
+    <div ng-class="{'container-fluid': fullscreen, 'container': !fullscreen}">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <span class="sr-only">Logo</span>
+            <div class="logo"></div>
+        </a>
+        <button class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    </div>
+</div>
+
+<div ng-class="{'container-fluid': fullscreen, 'container': !fullscreen}">
 
     <div ng-repeat="element in document">
         <div dynamic-directive="element"></div>
     </div>
 
-    <form class="form-inline">
+    <form class="form-inline" style="padding-top: 20px">
+        Fullscreen? <input type="checkbox" ng-model="fullscreen">
         <select ng-model="selectedDirective" class="form-control"ng-options="key as key for (key, val) in components"></select> <button class="btn btn-primary" ng-click="addComponent(selectedDirective)">Add</button>
     </form>
+
 
 </div>
 

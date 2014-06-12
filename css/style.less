@@ -1,3 +1,8 @@
+@red: #b00;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
 .aside-backdrop.am-fade {
   opacity: .5;
   transition: opacity .15s linear;
@@ -13,4 +18,120 @@
       opacity: 0;
     }
   }
+}
+
+.navbar {
+  background-color: white;
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .logo {
+      width: 95px;
+      height: 50px;
+      background: url("../img/logo.png") no-repeat;
+      background-size: 100%;
+
+    }
+  }
+}
+
+.container, .container-fluid {
+  .lug-jumbotron {
+
+    border-radius: 0;
+    overflow: hidden;
+    position:relative;
+
+    .lug-content-float {
+
+      @media (min-width: @screen-sm-min) { position:absolute;}
+
+    }
+
+    .lug-box {
+
+      padding: 20px 15px;
+      background: rgba(0, 0, 0, 0.6) url("../img/Bakgrunn_Sort.jpg") no-repeat;
+      background-size: cover;
+
+      h1 {
+        font-family: 'Titillium Web', sans-serif;
+        margin-top: 0;
+        @media (min-width: @screen-sm-min) { font-size: 43px;}
+        @media (min-width: @screen-md-min) { font-size: 53px; }
+        @media (min-width: @screen-lg-min) { font-size: 63px;}
+        font-weight: 200;
+        color: #fff;
+      }
+      p {
+        color: #fff;
+        text-align: justify;
+        @media (min-width: @screen-sm-min) { font-size: 14px;}
+        @media (min-width: @screen-md-min) { font-size: 18px; }
+        @media (min-width: @screen-lg-min) { font-size: 20px;}
+      }
+      .btn {
+        margin-top: 15px;
+      }
+
+
+
+      @media (min-width: @screen-sm-min) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-image: none;
+        &.right {
+          right: 30px;
+        }
+        &.left {
+          left: 30px;
+        }
+
+      }
+
+      @media (min-width: @screen-md-min) {
+        padding: 30px;
+      }
+    }
+  }
+
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.no-horizontal-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn {
+  border-radius: 0;
+  text-transform:uppercase;
+  &.btn-primary {
+    background-color: @red;
+    border-color: @red;
+  }
+}
+
+body {
+  padding-top: 50px;
 }

@@ -1,10 +1,7 @@
 angular.module('dynamicAngular', ['ngSanitize', 'ngAnimate', 'mgcrea.ngStrap'])
     .controller('MyController', ['$scope', 'Components', function ($scope, Components) {
 
-        $scope.document = [{
-            type: "header",
-            title: "Dynamic directive prototype"
-        }];
+        $scope.document = [];
 
         $scope.components = Components;
 
@@ -50,8 +47,10 @@ angular.module('dynamicAngular', ['ngSanitize', 'ngAnimate', 'mgcrea.ngStrap'])
         return {
             jumbotron: {
                 title: "text",
+                bilde: "text",
                 content: "textarea",
                 btnText: "text",
+                right: "checkbox",
                 button: "checkbox"
             },
             navbar: {
