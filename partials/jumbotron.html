@@ -3,9 +3,16 @@
         <img class="img-responsive" ng-src="img/{{dynamicDirective.bilde}}.jpg">
     </div>
 
-    <div class="lug-box col-sm-5 lug-content-float" ng-class="{'col-sm-offset-7': dynamicDirective.right, 'right': dynamicDirective.right, 'left': !dynamicDirective.right}">
+    <div class="lug-box col-sm-5 lug-content-float"
+         ng-class="{
+             'col-sm-offset-7': dynamicDirective.right,
+             'right': dynamicDirective.right,
+             'left': !dynamicDirective.right
+         }">
         <h1 ng-bind="dynamicDirective.title"></h1>
         <p ng-bind-html="dynamicDirective.content"></p>
-        <p ng-if="dynamicDirective.button"><a class="btn btn-primary btn-lg" role="button" ng-bind="dynamicDirective.btnText"></a></p>
+        <p ng-if="dynamicDirective.button">
+            <a class="btn btn-primary btn-lg" role="button" ng-bind="dynamicDirective.btnText"></a>
+        </p>
     </div>
 </div>

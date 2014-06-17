@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap-additions.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-app="dynamicAngular" ng-controller="MyController">
+<body ng-app="dynamicAngular" ng-controller="mainController">
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar>
     <div ng-class="{'container-fluid': fullscreen, 'container': !fullscreen}">
@@ -37,7 +37,7 @@
 
     <form class="form-inline" style="padding-top: 20px">
         Fullscreen? <input type="checkbox" ng-model="fullscreen">
-        <select ng-model="selectedDirective" class="form-control"ng-options="key as key for (key, val) in components"></select> <button class="btn btn-primary" ng-click="addComponent(selectedDirective)">Add</button>
+        <select ng-model="selectedDirective" class="form-control"ng-options="key as key for (key, val) in modules"></select> <button class="btn btn-primary" ng-click="addModule(selectedDirective)">Add</button>
     </form>
 
 
@@ -49,6 +49,9 @@
 <script src="lib/angular-strap.js"></script>
 <script src="lib/angular-strap.tpl.min.js"></script>
 <script src="app.js"></script>
+<script src="js/mainController.js"></script>
+<script src="js/dynamicDirective.js"></script>
+<script src="js/modules.js"></script>
 
 </body>
 </html>
